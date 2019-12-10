@@ -72,7 +72,7 @@ public class GuiEfetuarMatricula extends javax.swing.JFrame {
         cmbTurma = new javax.swing.JComboBox<>();
         btnInserir = new javax.swing.JButton();
         btnAlterar = new javax.swing.JButton();
-        btnExcuir = new javax.swing.JButton();
+        btnExcluir = new javax.swing.JButton();
         btnSair = new javax.swing.JButton();
         txtDataMatricula = new javax.swing.JFormattedTextField();
         txtCPFAluno = new javax.swing.JFormattedTextField();
@@ -268,12 +268,12 @@ public class GuiEfetuarMatricula extends javax.swing.JFrame {
             }
         });
 
-        btnExcuir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/fatec/poo/view/icon/Eraser.png"))); // NOI18N
-        btnExcuir.setText("Excluir");
-        btnExcuir.setEnabled(false);
-        btnExcuir.addActionListener(new java.awt.event.ActionListener() {
+        btnExcluir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/fatec/poo/view/icon/Eraser.png"))); // NOI18N
+        btnExcluir.setText("Excluir");
+        btnExcluir.setEnabled(false);
+        btnExcluir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnExcuirActionPerformed(evt);
+                btnExcluirActionPerformed(evt);
             }
         });
 
@@ -352,7 +352,7 @@ public class GuiEfetuarMatricula extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(btnAlterar)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btnExcuir)
+                .addComponent(btnExcluir)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnSair)
                 .addGap(0, 0, Short.MAX_VALUE))
@@ -387,7 +387,7 @@ public class GuiEfetuarMatricula extends javax.swing.JFrame {
                     .addComponent(btnConsultar)
                     .addComponent(btnInserir)
                     .addComponent(btnAlterar)
-                    .addComponent(btnExcuir)
+                    .addComponent(btnExcluir)
                     .addComponent(btnSair))
                 .addGap(28, 28, 28))
         );
@@ -483,7 +483,7 @@ public class GuiEfetuarMatricula extends javax.swing.JFrame {
         matricula = daoMatricula.verificarMatricula(cmbTurma.getSelectedItem().toString(), txtCPFAluno.getText());
         if(matricula != null){
             btnConsultar.setEnabled(true);
-            btnExcuir.setEnabled(true);
+            btnExcluir.setEnabled(true);
             btnConsultar.setEnabled(false);
             
             txtAgencia.setText(matricula.getData());
@@ -502,10 +502,10 @@ public class GuiEfetuarMatricula extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_btnConsultarActionPerformed
 
-    private void btnExcuirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExcuirActionPerformed
+    private void btnExcluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExcluirActionPerformed
         matricula = daoMatricula.verificarMatricula(cmbTurma.getSelectedItem().toString(), txtCPFAluno.getText());
         daoMatricula.excluir(matricula.getCod());
-    }//GEN-LAST:event_btnExcuirActionPerformed
+    }//GEN-LAST:event_btnExcluirActionPerformed
 
     private void btnAlterarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAlterarActionPerformed
         matricula = daoMatricula.verificarMatricula(cmbTurma.getSelectedItem().toString(), txtCPFAluno.getText());
@@ -617,7 +617,7 @@ public class GuiEfetuarMatricula extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAlterar;
     private javax.swing.JButton btnConsultar;
-    private javax.swing.JButton btnExcuir;
+    private javax.swing.JButton btnExcluir;
     private javax.swing.JButton btnInserir;
     private javax.swing.JButton btnSair;
     private javax.swing.ButtonGroup buttonGroup1;
